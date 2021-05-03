@@ -231,7 +231,7 @@ class SubTransaction(object):
         :type: str
         """
         if transfer_account_id is None:
-            raise ValueError("Invalid value for `transfer_account_id`, must not be `None`")  # noqa: E501
+            transfer_account_id = ''
 
         self._transfer_account_id = transfer_account_id
 

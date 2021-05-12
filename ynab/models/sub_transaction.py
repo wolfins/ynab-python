@@ -89,7 +89,7 @@ class SubTransaction(object):
         :type: str
         """
         if id is None:
-            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
+            id = ''
 
         self._id = id
 
@@ -112,7 +112,7 @@ class SubTransaction(object):
         :type: str
         """
         if transaction_id is None:
-            raise ValueError("Invalid value for `transaction_id`, must not be `None`")  # noqa: E501
+            transaction_id = ''
 
         self._transaction_id = transaction_id
 
@@ -137,7 +137,7 @@ class SubTransaction(object):
         :type: float
         """
         if amount is None:
-            raise ValueError("Invalid value for `amount`, must not be `None`")  # noqa: E501
+            amount = ''
 
         self._amount = amount
 
@@ -183,7 +183,7 @@ class SubTransaction(object):
         :type: str
         """
         if payee_id is None:
-            raise ValueError("Invalid value for `payee_id`, must not be `None`")  # noqa: E501
+            payee_id = ''
 
         self._payee_id = payee_id
 
@@ -206,7 +206,7 @@ class SubTransaction(object):
         :type: str
         """
         if category_id is None:
-            raise ValueError("Invalid value for `category_id`, must not be `None`")  # noqa: E501
+            category_id = ''
 
         self._category_id = category_id
 

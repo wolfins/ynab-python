@@ -131,7 +131,7 @@ class HybridTransaction(object):
         :type: str
         """
         if id is None:
-            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
+            id = ''
 
         self._id = id
 
@@ -154,7 +154,7 @@ class HybridTransaction(object):
         :type: date
         """
         if date is None:
-            raise ValueError("Invalid value for `date`, must not be `None`")  # noqa: E501
+            date = ''
 
         self._date = date
 
@@ -179,7 +179,7 @@ class HybridTransaction(object):
         :type: float
         """
         if amount is None:
-            raise ValueError("Invalid value for `amount`, must not be `None`")  # noqa: E501
+            amount = ''
 
         self._amount = amount
 
@@ -258,7 +258,7 @@ class HybridTransaction(object):
         :type: bool
         """
         if approved is None:
-            raise ValueError("Invalid value for `approved`, must not be `None`")  # noqa: E501
+            approved = ''
 
         self._approved = approved
 
@@ -313,7 +313,7 @@ class HybridTransaction(object):
         :type: str
         """
         if account_id is None:
-            raise ValueError("Invalid value for `account_id`, must not be `None`")  # noqa: E501
+            account_id = ''
 
         self._account_id = account_id
 
@@ -359,7 +359,7 @@ class HybridTransaction(object):
         :type: str
         """
         if category_id is None:
-            raise ValueError("Invalid value for `category_id`, must not be `None`")  # noqa: E501
+            category_id = ''
 
         self._category_id = category_id
 
@@ -487,7 +487,7 @@ class HybridTransaction(object):
         :type: str
         """
         if account_name is None:
-            raise ValueError("Invalid value for `account_name`, must not be `None`")  # noqa: E501
+            account_name = ''
 
         self._account_name = account_name
 

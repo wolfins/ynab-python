@@ -128,7 +128,7 @@ class TransactionDetail(object):
         :type: str
         """
         if id is None:
-            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
+            id = ''
 
         self._id = id
 
@@ -151,7 +151,7 @@ class TransactionDetail(object):
         :type: date
         """
         if date is None:
-            raise ValueError("Invalid value for `date`, must not be `None`")  # noqa: E501
+            date = ''
 
         self._date = date
 
@@ -176,7 +176,7 @@ class TransactionDetail(object):
         :type: float
         """
         if amount is None:
-            raise ValueError("Invalid value for `amount`, must not be `None`")  # noqa: E501
+            amount = ''
 
         self._amount = amount
 
@@ -332,7 +332,7 @@ class TransactionDetail(object):
         :type: str
         """
         if payee_id is None:
-            raise ValueError("Invalid value for `payee_id`, must not be `None`")  # noqa: E501
+            payee_id = ''
 
         self._payee_id = payee_id
 
@@ -355,7 +355,7 @@ class TransactionDetail(object):
         :type: str
         """
         if category_id is None:
-            raise ValueError("Invalid value for `category_id`, must not be `None`")  # noqa: E501
+            category_id = ''
 
         self._category_id = category_id
 
@@ -426,7 +426,7 @@ class TransactionDetail(object):
         :type: str
         """
         if account_name is None:
-            raise ValueError("Invalid value for `account_name`, must not be `None`")  # noqa: E501
+            account_name = ''
 
         self._account_name = account_name
 
@@ -449,7 +449,7 @@ class TransactionDetail(object):
         :type: str
         """
         if payee_name is None:
-            raise ValueError("Invalid value for `payee_name`, must not be `None`")  # noqa: E501
+            payee_name = ''
 
         self._payee_name = payee_name
 
@@ -472,7 +472,7 @@ class TransactionDetail(object):
         :type: str
         """
         if category_name is None:
-            raise ValueError("Invalid value for `category_name`, must not be `None`")  # noqa: E501
+            category_name = ''
 
         self._category_name = category_name
 

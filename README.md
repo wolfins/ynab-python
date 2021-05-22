@@ -1,6 +1,7 @@
 # ynab-python
 
-**No gaurentees this works as expected. It's just a place for me to play around to see if I can get something usable with the YNAB API. Other implementations so far don't seem to have optional fields.**
+A version of deanmcgregor/ynab-python without the "None" exceptions!
+
 
 Our API uses a REST based design, leverages the JSON data format, and relies upon HTTPS for transport. We respond with meaningful HTTP response codes and if an error occurs, we include error details in the response body.  API Documentation is at https://api.youneedabudget.com
 
@@ -20,9 +21,8 @@ Python 2.7 and 3.4+
 If the python package is hosted on Github, you can install directly from Github
 
 ```sh
-pip install git+https://github.com/deanmcgregor/ynab-python.git
+pip install git+https://github.com/cjappl/ynab-python.git
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/deanmcgregor/ynab-python.git`)
 
 Then import the package:
 ```python

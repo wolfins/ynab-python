@@ -15,16 +15,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.api.deprecated_api import DeprecatedApi  # noqa: E501
-from swagger_client.rest import ApiException
+import ynab
+from ynab.api.deprecated_api import DeprecatedApi  # noqa: E501
+from ynab.rest import ApiException
 
 
 class TestDeprecatedApi(unittest.TestCase):
     """DeprecatedApi unit test stubs"""
 
     def setUp(self):
-        self.api = swagger_client.api.deprecated_api.DeprecatedApi()  # noqa: E501
+        self.api = ynab.api.deprecated_api.DeprecatedApi()  # noqa: E501
 
     def tearDown(self):
         pass

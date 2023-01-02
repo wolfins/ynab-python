@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.bulk_response_data_bulk import BulkResponseDataBulk  # noqa: E501
-from swagger_client.rest import ApiException
+import ynab
+from ynab.models.bulk_response_data_bulk import BulkResponseDataBulk  # noqa: E501
+from ynab.rest import ApiException
 
 
 class TestBulkResponseDataBulk(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestBulkResponseDataBulk(unittest.TestCase):
     def testBulkResponseDataBulk(self):
         """Test BulkResponseDataBulk"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.bulk_response_data_bulk.BulkResponseDataBulk()  # noqa: E501
+        # model = ynab.models.bulk_response_data_bulk.BulkResponseDataBulk()  # noqa: E501
         pass
 
 

@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from ynab.models.payee_locations_wrapper import PayeeLocationsWrapper  # noqa: F401,E501
+from ynab.configuration import Configuration
 
 
 class PayeeLocationsResponse(object):
@@ -33,15 +33,18 @@ class PayeeLocationsResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'data': 'PayeeLocationsWrapper'
+        'data': 'PayeeLocationsResponseData'
     }
 
     attribute_map = {
         'data': 'data'
     }
 
-    def __init__(self, data=None):  # noqa: E501
+    def __init__(self, data=None, _configuration=None):  # noqa: E501
         """PayeeLocationsResponse - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._data = None
         self.discriminator = None
@@ -54,7 +57,7 @@ class PayeeLocationsResponse(object):
 
 
         :return: The data of this PayeeLocationsResponse.  # noqa: E501
-        :rtype: PayeeLocationsWrapper
+        :rtype: PayeeLocationsResponseData
         """
         return self._data
 
@@ -64,9 +67,9 @@ class PayeeLocationsResponse(object):
 
 
         :param data: The data of this PayeeLocationsResponse.  # noqa: E501
-        :type: PayeeLocationsWrapper
+        :type: PayeeLocationsResponseData
         """
-        if data is None:
+        if self._configuration.client_side_validation and data is None:
             raise ValueError("Invalid value for `data`, must not be `None`")  # noqa: E501
 
         self._data = data
@@ -92,6 +95,9 @@ class PayeeLocationsResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(PayeeLocationsResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 
@@ -108,8 +114,11 @@ class PayeeLocationsResponse(object):
         if not isinstance(other, PayeeLocationsResponse):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, PayeeLocationsResponse):
+            return True
+
+        return self.to_dict() != other.to_dict()

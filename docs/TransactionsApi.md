@@ -1,4 +1,4 @@
-# swagger_client.TransactionsApi
+# ynab.TransactionsApi
 
 All URIs are relative to *https://api.youneedabudget.com/v1*
 
@@ -26,20 +26,20 @@ Creates a single transaction or multiple transactions.  If you provide a body co
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ynab
+from ynab.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
+configuration = ynab.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
+api_instance = ynab.TransactionsApi(ynab.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-data = swagger_client.SaveTransactionsWrapper() # SaveTransactionsWrapper | The transaction or transactions to create.  To create a single transaction you can specify a value for the `transaction` object and to create multiple transactions you can specify an array of `transactions`.  It is expected that you will only provide a value for one of these objects.
+data = ynab.SaveTransactionsWrapper() # SaveTransactionsWrapper | The transaction or transactions to create.  To create a single transaction you can specify a value for the `transaction` object and to create multiple transactions you can specify an array of `transactions`.  It is expected that you will only provide a value for one of these objects.
 
 try:
     # Create a single transaction or multiple transactions
@@ -82,18 +82,18 @@ Returns a single transaction
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ynab
+from ynab.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
+configuration = ynab.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
+api_instance = ynab.TransactionsApi(ynab.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 transaction_id = 'transaction_id_example' # str | The id of the transaction
 
@@ -138,18 +138,18 @@ Returns budget transactions
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ynab
+from ynab.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
+configuration = ynab.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
+api_instance = ynab.TransactionsApi(ynab.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 since_date = '2013-10-20' # date | If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). (optional)
 type = 'type_example' # str | If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported. (optional)
@@ -198,18 +198,18 @@ Returns all transactions for a specified account
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ynab
+from ynab.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
+configuration = ynab.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
+api_instance = ynab.TransactionsApi(ynab.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 account_id = 'account_id_example' # str | The id of the account
 since_date = '2013-10-20' # date | If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). (optional)
@@ -260,18 +260,18 @@ Returns all transactions for a specified category
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ynab
+from ynab.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
+configuration = ynab.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
+api_instance = ynab.TransactionsApi(ynab.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 category_id = 'category_id_example' # str | The id of the category
 since_date = '2013-10-20' # date | If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). (optional)
@@ -322,18 +322,18 @@ Returns all transactions for a specified payee
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ynab
+from ynab.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
+configuration = ynab.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
+api_instance = ynab.TransactionsApi(ynab.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 payee_id = 'payee_id_example' # str | The id of the payee
 since_date = '2013-10-20' # date | If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). (optional)
@@ -384,18 +384,18 @@ Imports available transactions on all linked accounts for the given budget.  Lin
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ynab
+from ynab.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
+configuration = ynab.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
+api_instance = ynab.TransactionsApi(ynab.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 
 try:
@@ -438,21 +438,21 @@ Updates a single transaction
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ynab
+from ynab.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
+configuration = ynab.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
+api_instance = ynab.TransactionsApi(ynab.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 transaction_id = 'transaction_id_example' # str | The id of the transaction
-data = swagger_client.SaveTransactionWrapper() # SaveTransactionWrapper | The transaction to update
+data = ynab.SaveTransactionWrapper() # SaveTransactionWrapper | The transaction to update
 
 try:
     # Updates an existing transaction
@@ -496,20 +496,20 @@ Updates multiple transactions, by `id` or `import_id`.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ynab
+from ynab.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
+configuration = ynab.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
+api_instance = ynab.TransactionsApi(ynab.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-data = swagger_client.UpdateTransactionsWrapper() # UpdateTransactionsWrapper | The transactions to update. Each transaction must have either an `id` or `import_id` specified. If `id` is specified as null an `import_id` value can be provided which will allow transaction(s) to be updated by their `import_id`. If an `id` is specified, it will always be used for lookup.
+data = ynab.UpdateTransactionsWrapper() # UpdateTransactionsWrapper | The transactions to update. Each transaction must have either an `id` or `import_id` specified. If `id` is specified as null an `import_id` value can be provided which will allow transaction(s) to be updated by their `import_id`. If an `id` is specified, it will always be used for lookup.
 
 try:
     # Update multiple transactions

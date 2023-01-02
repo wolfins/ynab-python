@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from ynab.models.error_detail import ErrorDetail  # noqa: F401,E501
+from ynab.configuration import Configuration
 
 
 class ErrorResponse(object):
@@ -40,8 +40,11 @@ class ErrorResponse(object):
         'error': 'error'
     }
 
-    def __init__(self, error=None):  # noqa: E501
+    def __init__(self, error=None, _configuration=None):  # noqa: E501
         """ErrorResponse - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._error = None
         self.discriminator = None
@@ -66,7 +69,7 @@ class ErrorResponse(object):
         :param error: The error of this ErrorResponse.  # noqa: E501
         :type: ErrorDetail
         """
-        if error is None:
+        if self._configuration.client_side_validation and error is None:
             raise ValueError("Invalid value for `error`, must not be `None`")  # noqa: E501
 
         self._error = error
@@ -92,6 +95,9 @@ class ErrorResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ErrorResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 
@@ -108,8 +114,11 @@ class ErrorResponse(object):
         if not isinstance(other, ErrorResponse):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, ErrorResponse):
+            return True
+
+        return self.to_dict() != other.to_dict()

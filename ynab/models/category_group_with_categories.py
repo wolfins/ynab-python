@@ -16,8 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from ynab.models.category import Category  # noqa: F401,E501
-from ynab.models.category_group import CategoryGroup  # noqa: F401,E501
+from ynab.configuration import Configuration
 
 
 class CategoryGroupWithCategories(object):
@@ -34,109 +33,29 @@ class CategoryGroupWithCategories(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
-        'name': 'str',
-        'hidden': 'bool',
         'categories': 'list[Category]'
     }
 
     attribute_map = {
-        'id': 'id',
-        'name': 'name',
-        'hidden': 'hidden',
         'categories': 'categories'
     }
 
-    def __init__(self, id=None, name=None, hidden=None, categories=None):  # noqa: E501
+    def __init__(self, categories=None, _configuration=None):  # noqa: E501
         """CategoryGroupWithCategories - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
-        self._id = None
-        self._name = None
-        self._hidden = None
         self._categories = None
         self.discriminator = None
 
-        self.id = id
-        self.name = name
-        self.hidden = hidden
         self.categories = categories
-
-    @property
-    def id(self):
-        """Gets the id of this CategoryGroupWithCategories.  # noqa: E501
-
-
-        :return: The id of this CategoryGroupWithCategories.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this CategoryGroupWithCategories.
-
-
-        :param id: The id of this CategoryGroupWithCategories.  # noqa: E501
-        :type: str
-        """
-        if id is None:
-            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
-
-        self._id = id
-
-    @property
-    def name(self):
-        """Gets the name of this CategoryGroupWithCategories.  # noqa: E501
-
-
-        :return: The name of this CategoryGroupWithCategories.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this CategoryGroupWithCategories.
-
-
-        :param name: The name of this CategoryGroupWithCategories.  # noqa: E501
-        :type: str
-        """
-        if name is None:
-            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
-
-        self._name = name
-
-    @property
-    def hidden(self):
-        """Gets the hidden of this CategoryGroupWithCategories.  # noqa: E501
-
-        Whether or not the category group is hidden  # noqa: E501
-
-        :return: The hidden of this CategoryGroupWithCategories.  # noqa: E501
-        :rtype: bool
-        """
-        return self._hidden
-
-    @hidden.setter
-    def hidden(self, hidden):
-        """Sets the hidden of this CategoryGroupWithCategories.
-
-        Whether or not the category group is hidden  # noqa: E501
-
-        :param hidden: The hidden of this CategoryGroupWithCategories.  # noqa: E501
-        :type: bool
-        """
-        if hidden is None:
-            raise ValueError("Invalid value for `hidden`, must not be `None`")  # noqa: E501
-
-        self._hidden = hidden
 
     @property
     def categories(self):
         """Gets the categories of this CategoryGroupWithCategories.  # noqa: E501
 
-        Category group categories  # noqa: E501
+        Category group categories.  Amounts (budgeted, activity, balance, etc.) are specific to the current budget month (UTC).  # noqa: E501
 
         :return: The categories of this CategoryGroupWithCategories.  # noqa: E501
         :rtype: list[Category]
@@ -147,12 +66,12 @@ class CategoryGroupWithCategories(object):
     def categories(self, categories):
         """Sets the categories of this CategoryGroupWithCategories.
 
-        Category group categories  # noqa: E501
+        Category group categories.  Amounts (budgeted, activity, balance, etc.) are specific to the current budget month (UTC).  # noqa: E501
 
         :param categories: The categories of this CategoryGroupWithCategories.  # noqa: E501
         :type: list[Category]
         """
-        if categories is None:
+        if self._configuration.client_side_validation and categories is None:
             raise ValueError("Invalid value for `categories`, must not be `None`")  # noqa: E501
 
         self._categories = categories
@@ -178,6 +97,9 @@ class CategoryGroupWithCategories(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(CategoryGroupWithCategories, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 
@@ -194,8 +116,11 @@ class CategoryGroupWithCategories(object):
         if not isinstance(other, CategoryGroupWithCategories):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, CategoryGroupWithCategories):
+            return True
+
+        return self.to_dict() != other.to_dict()

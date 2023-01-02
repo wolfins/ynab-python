@@ -1,4 +1,4 @@
-# swagger_client.CategoriesApi
+# ynab.CategoriesApi
 
 All URIs are relative to *https://api.youneedabudget.com/v1*
 
@@ -21,18 +21,18 @@ Returns all categories grouped by category group.  Amounts (budgeted, activity, 
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ynab
+from ynab.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
+configuration = ynab.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.CategoriesApi(swagger_client.ApiClient(configuration))
+api_instance = ynab.CategoriesApi(ynab.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 last_knowledge_of_server = 789 # int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included. (optional)
 
@@ -77,18 +77,18 @@ Returns a single category.  Amounts (budgeted, activity, balance, etc.) are spec
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ynab
+from ynab.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
+configuration = ynab.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.CategoriesApi(swagger_client.ApiClient(configuration))
+api_instance = ynab.CategoriesApi(ynab.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 category_id = 'category_id_example' # str | The id of the category
 
@@ -133,18 +133,18 @@ Returns a single category for a specific budget month.  Amounts (budgeted, activ
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ynab
+from ynab.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
+configuration = ynab.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.CategoriesApi(swagger_client.ApiClient(configuration))
+api_instance = ynab.CategoriesApi(ynab.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 month = '2013-10-20' # date | The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
 category_id = 'category_id_example' # str | The id of the category
@@ -191,22 +191,22 @@ Update a category for a specific month.  Only `budgeted` amount can be updated.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ynab
+from ynab.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
+configuration = ynab.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.CategoriesApi(swagger_client.ApiClient(configuration))
+api_instance = ynab.CategoriesApi(ynab.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 month = '2013-10-20' # date | The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
 category_id = 'category_id_example' # str | The id of the category
-data = swagger_client.SaveMonthCategoryWrapper() # SaveMonthCategoryWrapper | The category to update.  Only `budgeted` amount can be updated and any other fields specified will be ignored.
+data = ynab.SaveMonthCategoryWrapper() # SaveMonthCategoryWrapper | The category to update.  Only `budgeted` amount can be updated and any other fields specified will be ignored.
 
 try:
     # Update a category for a specific month

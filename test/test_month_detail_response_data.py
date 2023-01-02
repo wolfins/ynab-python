@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.month_detail_response_data import MonthDetailResponseData  # noqa: E501
-from swagger_client.rest import ApiException
+import ynab
+from ynab.models.month_detail_response_data import MonthDetailResponseData  # noqa: E501
+from ynab.rest import ApiException
 
 
 class TestMonthDetailResponseData(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestMonthDetailResponseData(unittest.TestCase):
     def testMonthDetailResponseData(self):
         """Test MonthDetailResponseData"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.month_detail_response_data.MonthDetailResponseData()  # noqa: E501
+        # model = ynab.models.month_detail_response_data.MonthDetailResponseData()  # noqa: E501
         pass
 
 

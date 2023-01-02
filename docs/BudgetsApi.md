@@ -1,4 +1,4 @@
-# swagger_client.BudgetsApi
+# ynab.BudgetsApi
 
 All URIs are relative to *https://api.youneedabudget.com/v1*
 
@@ -20,18 +20,18 @@ Returns a single budget with all related entities.  This resource is effectively
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ynab
+from ynab.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
+configuration = ynab.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.BudgetsApi(swagger_client.ApiClient(configuration))
+api_instance = ynab.BudgetsApi(ynab.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 last_knowledge_of_server = 789 # int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included. (optional)
 
@@ -76,18 +76,18 @@ Returns settings for a budget
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ynab
+from ynab.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
+configuration = ynab.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.BudgetsApi(swagger_client.ApiClient(configuration))
+api_instance = ynab.BudgetsApi(ynab.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 
 try:
@@ -130,18 +130,18 @@ Returns budgets list with summary information
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ynab
+from ynab.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
+configuration = ynab.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.BudgetsApi(swagger_client.ApiClient(configuration))
+api_instance = ynab.BudgetsApi(ynab.ApiClient(configuration))
 include_accounts = true # bool | Whether to include the list of budget accounts (optional)
 
 try:

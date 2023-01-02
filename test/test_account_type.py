@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.account_type import AccountType  # noqa: E501
-from swagger_client.rest import ApiException
+import ynab
+from ynab.models.account_type import AccountType  # noqa: E501
+from ynab.rest import ApiException
 
 
 class TestAccountType(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestAccountType(unittest.TestCase):
     def testAccountType(self):
         """Test AccountType"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.account_type.AccountType()  # noqa: E501
+        # model = ynab.models.account_type.AccountType()  # noqa: E501
         pass
 
 

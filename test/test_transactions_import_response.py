@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.transactions_import_response import TransactionsImportResponse  # noqa: E501
-from swagger_client.rest import ApiException
+import ynab
+from ynab.models.transactions_import_response import TransactionsImportResponse  # noqa: E501
+from ynab.rest import ApiException
 
 
 class TestTransactionsImportResponse(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestTransactionsImportResponse(unittest.TestCase):
     def testTransactionsImportResponse(self):
         """Test TransactionsImportResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.transactions_import_response.TransactionsImportResponse()  # noqa: E501
+        # model = ynab.models.transactions_import_response.TransactionsImportResponse()  # noqa: E501
         pass
 
 

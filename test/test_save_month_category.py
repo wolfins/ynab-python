@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.save_month_category import SaveMonthCategory  # noqa: E501
-from swagger_client.rest import ApiException
+import ynab
+from ynab.models.save_month_category import SaveMonthCategory  # noqa: E501
+from ynab.rest import ApiException
 
 
 class TestSaveMonthCategory(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestSaveMonthCategory(unittest.TestCase):
     def testSaveMonthCategory(self):
         """Test SaveMonthCategory"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.save_month_category.SaveMonthCategory()  # noqa: E501
+        # model = ynab.models.save_month_category.SaveMonthCategory()  # noqa: E501
         pass
 
 

@@ -1,4 +1,4 @@
-# swagger_client.DeprecatedApi
+# ynab.DeprecatedApi
 
 All URIs are relative to *https://api.youneedabudget.com/v1*
 
@@ -18,20 +18,20 @@ Creates multiple transactions.  Although this endpoint is still supported, it is
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ynab
+from ynab.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
+configuration = ynab.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.DeprecatedApi(swagger_client.ApiClient(configuration))
+api_instance = ynab.DeprecatedApi(ynab.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-transactions = swagger_client.BulkTransactions() # BulkTransactions | The list of transactions to create
+transactions = ynab.BulkTransactions() # BulkTransactions | The list of transactions to create
 
 try:
     # Bulk create transactions

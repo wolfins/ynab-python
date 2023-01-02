@@ -1,4 +1,4 @@
-# ynab.PayeesApi
+# swagger_client.PayeesApi
 
 All URIs are relative to *https://api.youneedabudget.com/v1*
 
@@ -13,26 +13,26 @@ Method | HTTP request | Description
 
 Single payee
 
-Returns single payee
+Returns a single payee
 
 ### Example
 ```python
 from __future__ import print_function
 import time
-import ynab
-from ynab.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = ynab.Configuration()
+configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = ynab.PayeesApi(ynab.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.
-payee_id = 'payee_id_example' # str | The ID of the Payee.
+api_instance = swagger_client.PayeesApi(swagger_client.ApiClient(configuration))
+budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+payee_id = 'payee_id_example' # str | The id of the payee
 
 try:
     # Single payee
@@ -46,8 +46,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget. | 
- **payee_id** | [**str**](.md)| The ID of the Payee. | 
+ **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). | 
+ **payee_id** | **str**| The id of the payee | 
 
 ### Return type
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_payees**
-> PayeesResponse get_payees(budget_id)
+> PayeesResponse get_payees(budget_id, last_knowledge_of_server=last_knowledge_of_server)
 
 List payees
 
@@ -75,23 +75,24 @@ Returns all payees
 ```python
 from __future__ import print_function
 import time
-import ynab
-from ynab.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = ynab.Configuration()
+configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = ynab.PayeesApi(ynab.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.
+api_instance = swagger_client.PayeesApi(swagger_client.ApiClient(configuration))
+budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+last_knowledge_of_server = 789 # int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included. (optional)
 
 try:
     # List payees
-    api_response = api_instance.get_payees(budget_id)
+    api_response = api_instance.get_payees(budget_id, last_knowledge_of_server=last_knowledge_of_server)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayeesApi->get_payees: %s\n" % e)
@@ -101,7 +102,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget. | 
+ **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). | 
+ **last_knowledge_of_server** | **int**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional] 
 
 ### Return type
 

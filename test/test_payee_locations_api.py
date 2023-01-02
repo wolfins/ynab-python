@@ -15,16 +15,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import ynab
-from ynab.payee_locations_api import PayeeLocationsApi  # noqa: E501
-from ynab.rest import ApiException
+import swagger_client
+from swagger_client.api.payee_locations_api import PayeeLocationsApi  # noqa: E501
+from swagger_client.rest import ApiException
 
 
 class TestPayeeLocationsApi(unittest.TestCase):
     """PayeeLocationsApi unit test stubs"""
 
     def setUp(self):
-        self.api = ynab.payee_locations_api.PayeeLocationsApi()  # noqa: E501
+        self.api = swagger_client.api.payee_locations_api.PayeeLocationsApi()  # noqa: E501
 
     def tearDown(self):
         pass

@@ -1,4 +1,4 @@
-# ynab.PayeeLocationsApi
+# swagger_client.PayeeLocationsApi
 
 All URIs are relative to *https://api.youneedabudget.com/v1*
 
@@ -20,20 +20,20 @@ Returns a single payee location
 ```python
 from __future__ import print_function
 import time
-import ynab
-from ynab.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = ynab.Configuration()
+configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = ynab.PayeeLocationsApi(ynab.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.
-payee_location_id = 'payee_location_id_example' # str | ID of payee location
+api_instance = swagger_client.PayeeLocationsApi(swagger_client.ApiClient(configuration))
+budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+payee_location_id = 'payee_location_id_example' # str | id of payee location
 
 try:
     # Single payee location
@@ -47,8 +47,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget. | 
- **payee_location_id** | [**str**](.md)| ID of payee location | 
+ **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). | 
+ **payee_location_id** | **str**| id of payee location | 
 
 ### Return type
 
@@ -76,19 +76,19 @@ Returns all payee locations
 ```python
 from __future__ import print_function
 import time
-import ynab
-from ynab.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = ynab.Configuration()
+configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = ynab.PayeeLocationsApi(ynab.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.
+api_instance = swagger_client.PayeeLocationsApi(swagger_client.ApiClient(configuration))
+budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 
 try:
     # List payee locations
@@ -102,7 +102,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget. | 
+ **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). | 
 
 ### Return type
 
@@ -124,26 +124,26 @@ Name | Type | Description  | Notes
 
 List locations for a payee
 
-Returns all payee locations for the specified payee
+Returns all payee locations for a specified payee
 
 ### Example
 ```python
 from __future__ import print_function
 import time
-import ynab
-from ynab.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = ynab.Configuration()
+configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = ynab.PayeeLocationsApi(ynab.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.
-payee_id = 'payee_id_example' # str | ID of payee
+api_instance = swagger_client.PayeeLocationsApi(swagger_client.ApiClient(configuration))
+budget_id = 'budget_id_example' # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+payee_id = 'payee_id_example' # str | id of payee
 
 try:
     # List locations for a payee
@@ -157,8 +157,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget. | 
- **payee_id** | [**str**](.md)| ID of payee | 
+ **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). | 
+ **payee_id** | **str**| id of payee | 
 
 ### Return type
 

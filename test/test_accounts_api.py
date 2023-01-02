@@ -15,18 +15,25 @@ from __future__ import absolute_import
 
 import unittest
 
-import ynab
-from ynab.accounts_api import AccountsApi  # noqa: E501
-from ynab.rest import ApiException
+import swagger_client
+from swagger_client.api.accounts_api import AccountsApi  # noqa: E501
+from swagger_client.rest import ApiException
 
 
 class TestAccountsApi(unittest.TestCase):
     """AccountsApi unit test stubs"""
 
     def setUp(self):
-        self.api = ynab.accounts_api.AccountsApi()  # noqa: E501
+        self.api = swagger_client.api.accounts_api.AccountsApi()  # noqa: E501
 
     def tearDown(self):
+        pass
+
+    def test_create_account(self):
+        """Test case for create_account
+
+        Create a new account  # noqa: E501
+        """
         pass
 
     def test_get_account_by_id(self):

@@ -15,16 +15,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import ynab
-from ynab.scheduled_transactions_api import ScheduledTransactionsApi  # noqa: E501
-from ynab.rest import ApiException
+import swagger_client
+from swagger_client.api.scheduled_transactions_api import ScheduledTransactionsApi  # noqa: E501
+from swagger_client.rest import ApiException
 
 
 class TestScheduledTransactionsApi(unittest.TestCase):
     """ScheduledTransactionsApi unit test stubs"""
 
     def setUp(self):
-        self.api = ynab.scheduled_transactions_api.ScheduledTransactionsApi()  # noqa: E501
+        self.api = swagger_client.api.scheduled_transactions_api.ScheduledTransactionsApi()  # noqa: E501
 
     def tearDown(self):
         pass

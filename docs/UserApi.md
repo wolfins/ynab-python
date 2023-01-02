@@ -1,4 +1,4 @@
-# ynab.UserApi
+# swagger_client.UserApi
 
 All URIs are relative to *https://api.youneedabudget.com/v1*
 
@@ -12,24 +12,24 @@ Method | HTTP request | Description
 
 User info
 
-Returns authenticated user information.
+Returns authenticated user information
 
 ### Example
 ```python
 from __future__ import print_function
 import time
-import ynab
-from ynab.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-configuration = ynab.Configuration()
+configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = ynab.UserApi(ynab.ApiClient(configuration))
+api_instance = swagger_client.UserApi(swagger_client.ApiClient(configuration))
 
 try:
     # User info

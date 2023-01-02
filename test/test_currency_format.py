@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import ynab
-from ynab.models.currency_format import CurrencyFormat  # noqa: E501
-from ynab.rest import ApiException
+import swagger_client
+from swagger_client.models.currency_format import CurrencyFormat  # noqa: E501
+from swagger_client.rest import ApiException
 
 
 class TestCurrencyFormat(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestCurrencyFormat(unittest.TestCase):
     def testCurrencyFormat(self):
         """Test CurrencyFormat"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = ynab.models.currency_format.CurrencyFormat()  # noqa: E501
+        # model = swagger_client.models.currency_format.CurrencyFormat()  # noqa: E501
         pass
 
 
